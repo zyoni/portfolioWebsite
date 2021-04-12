@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Johnny Au Yeung</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<script src="js/main.js"></script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="bannerbg-contact">
+			</div>
+			<div class="bannercontent-contact w-25">
+				<p class="text-center text-white font-weight-bold mytitle">Contact</p>
+			</div>
+			<div class="col-xl-2 p-3 mx-auto">
+				<form id="form" action="test.php">
+					<div class="form-group">
+						<label class="text-white font-weight-bold" for="name">Name:</label>
+						<input type="text" class="form-control" placeholder="Enter name" name="name">
+					</div>
+					<div class="form-group">
+						<label class="text-white font-weight-bold" for="contact">Contact:</label>
+						<input type="text" class="form-control" placeholder="Enter contact" name="contact">
+					</div>
+					<button type="submit" id="submit" class="btn btn-primary">Submit</button>
+					<div id="result"></div>
+				</form>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function() { // run once the page DOM is ready for JavaScript code to execute
+				
+					$("#submit").click(function() { // to bind an event handler to the "click" JavaScript event, or trigger that event on an element.
+
+
+					
+						var name = $("input[name=name]").val(); // Get the current value of the first element in the set of matched elements or set the value of every matched element.
+						var contact = $("input[name=contact]").val(); // Get the current value of the first element in the set of matched elements or set the value of every matched element.
+						
+						if(name=='' || contact=='') { // when there is empty field
+							alert("Please fill all fields."); // alert
+							return false;
+						}
+						
+						$.ajax({
+							type: "POST", // The HTTP method to use for the request
+							url: "test.php", // A string containing the URL to which the request is sent.
+							data: { // An object that is sent to the server with the request.
+								name: name,
+								contact: contact
+							},
+							cache: false,
+							success: function(data) { // The success callback function is passed the returned data
+								alert(data); // alert data
+							},
+							error: function(xhr, status, error) {
+								console.error(xhr);
+							}
+						});
+					
+					});
+				
+				});
+			</script>
+		</div>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<div class="footer container-fluid">
+			<script type="text/javascript">
+				createFooter();
+			</script>
+		</div>
+	</body>
+</html>
