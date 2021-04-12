@@ -9,8 +9,8 @@ Bootstrap Components:
 - Cards: Bootstrap's cards provide a flexible and extensible content container with multiple variants and options.
 
 HTML Form:
-An HTML form is used to collect user input. The user input is most often sent to a server for processing.
+- An HTML form is used to collect user input. The user input is most often sent to a server for processing.
 
 JQuery:
-AJAX POST: Submits data to be processed to a specified resource.
-jQuery HTML DOM: To handle Browser Incompatibilities and to simplify HTML DOM Manipulation, Event Handling, Animations, and Ajax.
+- AJAX POST: Submits data to be processed to a specified resource.
+- jQuery HTML DOM: To handle Browser Incompatibilities and to simplify HTML DOM Manipulation, Event Handling, Animations, and Ajax.
